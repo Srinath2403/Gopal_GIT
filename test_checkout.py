@@ -3,11 +3,17 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 import time
+from selenium.webdriver.chrome.options import Options
+
 
 
 @pytest.fixture
 def driver():
-    driver = webdriver.Chrome()
+    options = Options()
+    options.add_argument("--headless")
+
+
+    driver = webdriver.Chrome(options=options)
     driver.get("https://rahulshettyacademy.com/seleniumPractise/#/")
     driver.maximize_window()
     yield driver
