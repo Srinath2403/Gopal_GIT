@@ -39,7 +39,7 @@ def test_add_to_cart_and_checkout(driver):
     # Go to cart
     driver.find_element(By.XPATH, "//img[@alt='Cart']").click()
     driver.find_element(By.XPATH, "//button[.='PROCEED TO CHECKOUT']").click()
-    time.sleep(2)
+    time.sleep(3)
 
     # Apply promo code
     driver.find_element(By.XPATH, "//input[@class='promoCode']").send_keys("rahulshettyacademy")
